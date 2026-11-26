@@ -41,6 +41,8 @@ OUTPUT_PATH = "/output/entry.txt"
 def main() -> None:
     # Gate checks, mirroring the sealed scorer.
     assert isinstance(ENTRY, str)
+    # RULES.txt gate: the judged file must hold 1-240 characters.
+    # This entry is 110, so it sits comfortably inside the range.
     assert 1 <= len(ENTRY) <= 240, f"entry must be 1-240 chars, got {len(ENTRY)}"
     assert ENTRY.strip(), "entry must not be only white space"
     # One line: no newline inside the text itself.
